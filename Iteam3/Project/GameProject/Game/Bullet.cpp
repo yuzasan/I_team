@@ -11,6 +11,7 @@ Bullet::Bullet(int type, const CVector2D& pos, float ang, float speed):Base(type
 
 	m_pos = pos;
 	m_img.SetCenter(16, 16);
+	m_rad = 8;
 	m_ang = ang;
 	m_speed = speed;
 	m_cnt = 2;
@@ -61,12 +62,27 @@ void Bullet::Collision(Base* b){
 			SetKill();
 			b->SetKill();
 		}
+
 		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b) && m_cnt == 1) {
 			SetKill();
 			b->SetKill();
 		}
 		break;
 	case eType_Enemy:
+		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b)) {
+			SetKill();
+			b->SetKill();
+		}
+		break;
+
+	case eType_Player_Bullet:
+		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b)) {
+			SetKill();
+			b->SetKill();
+		}
+		break;
+
+	case eType_Enemy_Bullet:
 		if (m_type == eType_Player_Bullet && Base::CollisionCircle(this, b)) {
 			SetKill();
 			b->SetKill();
