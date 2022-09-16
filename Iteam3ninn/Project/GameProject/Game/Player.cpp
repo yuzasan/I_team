@@ -65,6 +65,6 @@ void Player::Collision(Base* b){
 			if (t != 0)
 				m_pos.y = m_pos_old.y;
 		}
-		break;
+	break;
 	}
 }

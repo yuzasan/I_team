@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "Bullet.h"
+#include "Map.h"
 
 Enemy::Enemy(const CVector2D& pos) :Base(eType_Enemy) {
 	m_img = COPY_RESOURCE("Enemy", CImage);
@@ -37,11 +38,8 @@ void Enemy::Draw() {
 
 void Enemy::Collision(Base* b) {
 	switch (b->m_type) {
-
 	case eType_Player:
 		if (Base::CollisionCircle(this, b)) {
-
-
 			CVector2D V = m_pos - b->m_pos;
 			float l = V.Length();
 			float s = m_rad + b->m_rad - l;
