@@ -7,12 +7,16 @@ Enemy::Enemy(const CVector2D& pos) :Base(eType_Enemy) {
 	m_pos = pos;
 	//中心を設定
 	m_img.SetCenter(16, 16);
+	//矩形を設定	(左、上、右、下)
+	m_rect = CRect(-10, -10, 10, 10);
 	//半径
 	m_rad = 16;
 
 }
 
 void Enemy::Update() {
+	//移動前の位置
+	m_pos_old = m_pos;
 	//カウントアップ
 	m_cnt++;
 	//プレイヤーを取得
@@ -33,7 +37,6 @@ void Enemy::Draw() {
 	m_img.SetPos(m_pos);
 	m_img.SetAng(m_ang);
 	m_img.Draw();
-
 }
 
 void Enemy::Collision(Base* b) {
@@ -47,6 +50,18 @@ void Enemy::Collision(Base* b) {
 			m_pos += V * s;
 		}
 		break;
+	case eType_Field:
+		if (Map* m = dynamic_cast<Map*>(b)) {
+			Base* b = Base::FindObject(eType_Player);
+			//int t = m->CollisionMap(m_pos);
+			int t = m->CollisionMap(CVector2D(m_pos.x, m_pos.y), m_rect);
+			if (t != 0) {
+				int t = m->CollisionMap(m_pos);
+				float speed = 10.0f;
+				CVector2D v = b->m_pos - m_pos;
+				m_pos += v.GetNormalize() * speed;
+			}
+		}
+		break;
 	}
-
 }

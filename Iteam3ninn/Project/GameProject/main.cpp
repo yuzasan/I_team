@@ -73,9 +73,11 @@ void Init(void)
 	//プレイヤーの生成
 	Base::Add(new Player(CVector2D(32 * 3, 32 * 4)));
 	//敵の生成
-	Base::Add(new Enemy(CVector2D(32 * 3, 32 * 8)));
-	Base::Add(new Enemy(CVector2D(32 * 17, 32 * 14)));
+	Base::Add(new Enemy(CVector2D(32 * 28, 32 * 4)));
+	Base::Add(new Enemy(CVector2D(32 * 28, 32 * 18)));
 	Base::Add(new Enemy(CVector2D(32 * 37, 32 * 10)));
+	Base::Add(new Enemy(CVector2D(32 * 17, 32 * 7)));
+	Base::Add(new Enemy(CVector2D(32 * 17, 32 * 15)));
 	//マップの生成
 	Base::Add(new Map());
 
