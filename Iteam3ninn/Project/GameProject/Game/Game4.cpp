@@ -36,8 +36,10 @@ void Game4::Update() {
 }
 
 void Game4::Draw(){
-	if (PUSH(CInput::eMouseL)) {
-		m_cnt--;
+	if (m_cnt>0) {
+		if (PUSH(CInput::eMouseL)) {
+			m_cnt--;
+		}
 	}
 	m_title_text.Draw(10, 20, 255, 0, 0, "Žc‚èŽc’e:%d",m_cnt);
 }
