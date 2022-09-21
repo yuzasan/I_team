@@ -38,6 +38,8 @@ public:
 	//スクロール値
 	static CVector2D m_scroll;
 
+	int m_cnt = 7;
+
 	//オブジェクトリスト
 	static std::list<Base*> m_list;
 public:

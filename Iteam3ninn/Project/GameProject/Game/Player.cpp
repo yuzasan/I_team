@@ -11,6 +11,7 @@ Player::Player(const CVector2D& pos):Base(eType_Player) {
 	m_rect = CRect(-16, -16, 16, 16);
 	//”¼Œa
 	m_rad = 16;
+
 }
 
 void Player::Update(){

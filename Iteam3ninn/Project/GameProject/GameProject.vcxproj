@@ -13,17 +13,35 @@
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="Game\Bullet.cpp" />
+    <ClCompile Include="Game\Bullet2.cpp" />
     <ClCompile Include="Game\Enemy.cpp" />
+    <ClCompile Include="Game\Enemy2.cpp" />
+    <ClCompile Include="Game\Game.cpp" />
+    <ClCompile Include="Game\Game2.cpp" />
+    <ClCompile Include="Game\Game3.cpp" />
+    <ClCompile Include="Game\Game4.cpp" />
+    <ClCompile Include="Game\Game5.cpp" />
     <ClCompile Include="Game\Map.cpp" />
     <ClCompile Include="Game\Player.cpp" />
+    <ClCompile Include="Game\Player2.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Title\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Game\Bullet.h" />
+    <ClInclude Include="Game\Bullet2.h" />
     <ClInclude Include="Game\Enemy.h" />
+    <ClInclude Include="Game\Enemy2.h" />
+    <ClInclude Include="Game\Game.h" />
+    <ClInclude Include="Game\Game2.h" />
+    <ClInclude Include="Game\Game3.h" />
+    <ClInclude Include="Game\Game4.h" />
+    <ClInclude Include="Game\Game5.h" />
     <ClInclude Include="Game\Map.h" />
     <ClInclude Include="Game\Player.h" />
+    <ClInclude Include="Game\Player2.h" />
+    <ClInclude Include="Title\Title.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FE2CE3B1-49BF-46A5-9DB1-9BD5B52FE1A0}</ProjectGuid>
